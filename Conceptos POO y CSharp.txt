@@ -1,0 +1,105 @@
+POO
+
+Objeto
+    Un objeto es la representación de una entidad que tiene propiedades y tiene funcionalidades. Por ejemplo un carro tiene puertas, motor, color, etc. y tiene funcionalidades como acelerar, frenar, girar, etc.
+
+Clase
+    Es un molde que te sirve para crear objetos; es la definición de dichos objetos.
+
+Static
+    Se usa para crear una clase/propiedad/método que se puede invocar desde la clase más no desde el objeto (instancia). Es decir, no necesita crearse un objeto para acceder a la propiedad estática, ya que pertenece al tipo. Si una clase es declarada como static, entonces, todos sus métodos y propiedades deberán ser declaradas como static también.
+
+Modificadores de acceso (Access modifiers)
+    Public
+        Se puede acceder desde fuera de la clase en la cual fue creado (propiedad, método, etc.)
+
+    Private
+        Sólo se puede acceder dentro de la clase en la cual fue creado (propiedad, método, etc.)
+
+    Protected
+        Permite ejecutar o acceder a los métodos/propiedades únicamente en la clase padre o en la clase hija. Para esto, en la clase padre se debe añadir la palabra reservada "Virtual" al método que se podrá sobreescribir.
+
+
+Constructor
+    Método que se utiliza cuando se crea la clase (se genera una instancia de la misma)
+
+Propiedades
+    Son parecidos a los atributos de una clase, pero las propiedades, cuentan con 'accessors', lo que permite la manipulación "segura" de la propiedad.
+
+Herencia
+    Se puede heredar las características de una clase a otra clase, ayudando a minimizar la reescritura de código. En C# sólo se puede heredar de una clase y se hace poniendo dos puntos, por ejemplo:
+            class Doctor : People
+    Donde, se crea la clase Doctor y hereda las propiedades y métodos de la clase People.
+    Si se agrega la palabra reservada "SEALED" en la declaración de la clase, dicha clase no podrá ser heredada.
+
+    Abstracción
+        Poder identificar un funcionamiento lo más abstracto posible. Algo debería ser explicado por sus propiedades y funcionamiento.
+
+    Sobrecarga (Overload)
+        Capacidad que tienen las clases de tener varios métodos con el mismo nombre invocados con distintos parámetros, es decir, que la firma única sea diferente por cada método (los parámetros que recibe el método se conoce como firma única), por ejemplo:
+            public int Sum()
+            public int Sum(int num1, int num2)
+
+    Sobreescritura (Overwrite)
+        Permite sobreescribir o ampliar la funcionalidad heredada de la clase padre a la clase hija
+
+    Interface
+        Es un contrato con el cual tendrá que cumplir la clase que implemente la interfaz. Es decir, la clase tiene que cumplir con las propiedades y los métodos que define la interfaz. Una clase puede implementar N interfaces.
+        Ayudan a dar un mecanismo para categorización de clases, sin tener límite de categorías.
+    
+    Clase Abstracta
+        Es una clase que únicamente puede ser heredada pero no instanciada. Contiene propiedades, atributos y métodos y la implementación de los mismos. Sirve solamente para especificar funcionamiento y cualidades o propiedades, pero no sirve para crear objetos.
+
+    Delegates
+        Sirve para definir la estructura de una función, es decir, el tipo del valor de retorno (string, int, bool, void, etc.) y la cantidad y tipo de parámetros que espera la función. Dicha estructura podrá ser aplicada a funciones que la cumplan y así ser asignadas a una variable del tipo del delegado, para hacer más sencillo el llamado a la función. Se puede añadir más de una función a la variable del tipo del delegado siempre y cuando cumplan con las reglas antes establecidas. A esto se le conoce como Multidifusión.
+        Sirven para definir un tipo y asignar un orden a las funciones que se requieran utilizar en el código.
+
+        Función de primer orden
+
+        Función de orden superior
+            Es una función que puede recibir en parámetros otras funciones.
+
+        Func
+            Recibe parámetros y retorna información
+
+        Action
+            Recibe parámetros pero no retorna información
+
+        Predicate
+            Únicamente regresa un booleano como resultado (True/False); sólo recibe un parámetro
+
+    
+PATRONES DE DISEÑO
+    Son técnicas comprobadas que resuelven problemas comunes en programación. Se pueden clasificar en tres tipos generales:
+
+    Creacionales
+        Nos ayudan a definir cómo crear los objetos
+
+        * Singleton
+            Este patrón sirve para crear objetos únicos en la aplicación, es decir, que sólo exista uno. Lo anterior puede ser ya que el objeto es complejo de crear, tiene un costo alto de rendimiento, o bien, se conecta con un tercero que sólo permite una conexión hacia el. (Un único objeto en toda la aplicación.)
+
+        * Factory Method
+            Fábrica de métodos
+
+        * Inyección de dependencias
+
+
+
+    Estructurales
+        Nos ayudan a definir cómo es que están armados los objetos
+
+        * Repository
+            Se encarga de proporcionar una modo para acceder a los datos almacenados en un repositorio, tal como Entity Framework.
+            
+        * Unit of Work
+            Sugiere que si se tiene un conjunto de peticiones a base de datos, se pueden agrupar y mandarlas juntas, ahorrando solicitudes por cada interacción. Se podría decir que es un extra para el patrón Repository, una forma de agruparlo.
+
+    Comportamiento
+        Nos ayudan a definir cómo se comportan los objetos
+
+MVC
+    Controlador
+        Es el que recibe la solicitud de un cliente, la trata y la maneja junto con los modelos y si es adecuado regresar una vista, regresará la vista. También puede trabajar como backend, regresando solicitudes y respuestas JSon o XML.
+
+    Vista
+        Es la capa visual que se encarga de mostrar la interface al usuario. Es contenido HTML básicamente.
